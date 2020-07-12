@@ -1,0 +1,53 @@
+---
+title: R and Python Functions For Detecting Prime Numbers
+author: Dave Rosenman
+date: '2017-12-04'
+slug: r-and-python-functions-for-detecting-prime-numbers
+categories:
+  - R
+  - Python
+  - Math
+tags:
+  - R
+  - Python
+  - Math
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-07-12T11:36:14-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>R function:</p>
+<pre class="r"><code>is_prime &lt;- function(x) {
+  !any(x %% 2:(x-1) == 0L)
+}</code></pre>
+<p>Examples:</p>
+<pre class="r"><code>is_prime(7)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>is_prime(934213)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>is_prime(934213)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>is_prime(999983)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Python function:</p>
+<pre class="python"><code>import numpy as np
+def is_prime_python(x):
+    return not any(x % np.arange(2,x-1) == 0)</code></pre>
+<p>Examples:</p>
+<pre class="python"><code>is_prime_python(7)</code></pre>
+<pre><code>## True</code></pre>
+<pre class="python"><code>is_prime_python(934213)</code></pre>
+<pre><code>## False</code></pre>
+<pre class="python"><code>is_prime_python(934213)</code></pre>
+<pre><code>## False</code></pre>
+<pre class="python"><code>is_prime_python(999983)</code></pre>
+<pre><code>## True</code></pre>

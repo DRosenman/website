@@ -1,0 +1,87 @@
+---
+title: Derivation of Generalization of the Gamma Function
+author: Dave Rosenman
+date: '2017-10-16'
+slug: derivation-of-generalization-of-the-gamma-function
+categories:
+  - Math
+tags:
+  - Math
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-07-12T12:03:25-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+The following definite integral problem was posted on stackexchange.com today.
+\begin{equation} 
+  1.35 \times10^-7\int e^{-0.03x}x^4dx
+  (\#eq:1)
+\end{equation} 
+
+The version of the gamma function, a useful function for solving improper integrals, that I learned as an undergraduate physics major is
+\begin{equation}
+\int_{0}^{\infty} e^{-x}x^ndx = n! 
+(\#eq:2)
+\end{equation}
+
+At first glance, it appears that the gamma function (equation 2) can be used to solve equation 1, since a constant times a definite integral is equal to the constant times the definite integral. However, since $-0.03x$ is not equal to $x$, equation 2 cannot be used to solve equation 1; the integrands are not of the same form. But it is possible to derive a formula for solving improper integrals of the same form as equation 1 using u-subtitution and the gamma function.
+
+Equation 1 has the form 
+\begin{equation}
+c\int_{0}^{\infty} e^{-ax}x^ndx
+(\#eq:3)
+\end{equation}
+
+(with $c$ and $a$ being constants)
+
+Let 
+\begin{equation}
+u = ax
+(\#eq:4)
+\end{equation}
+
+If follows from equation 4 that 
+\begin{equation}
+x = \frac{u}{a}
+(\#eq:5)
+\end{equation}
+
+and 
+\begin{equation}
+dx = \frac{du}{a}
+(\#eq:6)
+\end{equation}
+
+Applying equations 4, 5, and 6 to equation 3:
+\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = c\int_{0}^{\infty}e^{-u}(\frac{u}{a})^n\frac{du}{a}
+\end{equation}
+
+\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = \frac{c}{a^{n+1}}\int_{0}^{\infty}e^{-u}u^ndu
+(\#eq:7)
+\end{equation}
+
+In equation 7, $\int_{0}^{\infty}e^{-u}u^ndu$ is just the gamma function and is thus equal to $n!$. 
+
+One important thing to be aware of is that the bounds of integration have not changed, since when $x$ goes to zero, from equation 4, u goes to zero as well. And when $x$ goes to infinity, $u$ goes to infinity for any non-zero constant $a$.
+
+Finally, from equations 7 and the gamma function (equation 2):
+\begin{equation}
+c \int_{0}^{\infty}e^{-ax}x^ndx = \frac{c}{a^{n+1}}n!
+(\#eq:8)
+\end{equation}
+
+So to solve our problem equation 1, with $c = 1.35 \times 10^{-7}$ and $a = 0.03$, we get:
+\begin{equation}
+1.35 \times 10^{-7}\int_{0}^{\infty}e^{-0.03x}x^ndx = \frac{1.35 \times 10^{-7}}{0.03^5}4! = \frac{400}{3}
+\end{equation}
+
+Without using equation 8, the integral could be solved, but it would require using integration by parts multiples times (unless there is another method that I am unaware of), which is an unnecessarily long and arduous way to evaluate the integral.

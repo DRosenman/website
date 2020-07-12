@@ -1,0 +1,75 @@
+---
+title: Derivation of Generalization of the Gamma Function
+author: Dave Rosenman
+date: '2017-10-16'
+slug: derivation-of-generalization-of-the-gamma-function
+categories:
+  - Math
+tags:
+  - Math
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-07-12T12:03:25-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>The following definite integral problem was posted on stackexchange.com today.
+<span class="math display" id="eq:1">\[\begin{equation} 
+  1.35 \times10^-7\int e^{-0.03x}x^4dx
+  \tag{1}
+\end{equation}\]</span></p>
+<p>The version of the gamma function, a useful function for solving improper integrals, that I learned as an undergraduate physics major is
+<span class="math display" id="eq:2">\[\begin{equation}
+\int_{0}^{\infty} e^{-x}x^ndx = n! 
+\tag{2}
+\end{equation}\]</span></p>
+<p>At first glance, it appears that the gamma function (equation 2) can be used to solve equation 1, since a constant times a definite integral is equal to the constant times the definite integral. However, since <span class="math inline">\(-0.03x\)</span> is not equal to <span class="math inline">\(x\)</span>, equation 2 cannot be used to solve equation 1; the integrands are not of the same form. But it is possible to derive a formula for solving improper integrals of the same form as equation 1 using u-subtitution and the gamma function.</p>
+<p>Equation 1 has the form
+<span class="math display" id="eq:3">\[\begin{equation}
+c\int_{0}^{\infty} e^{-ax}x^ndx
+\tag{3}
+\end{equation}\]</span></p>
+<p>(with <span class="math inline">\(c\)</span> and <span class="math inline">\(a\)</span> being constants)</p>
+<p>Let
+<span class="math display" id="eq:4">\[\begin{equation}
+u = ax
+\tag{4}
+\end{equation}\]</span></p>
+<p>If follows from equation 4 that
+<span class="math display" id="eq:5">\[\begin{equation}
+x = \frac{u}{a}
+\tag{5}
+\end{equation}\]</span></p>
+<p>and
+<span class="math display" id="eq:6">\[\begin{equation}
+dx = \frac{du}{a}
+\tag{6}
+\end{equation}\]</span></p>
+<p>Applying equations 4, 5, and 6 to equation 3:
+<span class="math display">\[\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = c\int_{0}^{\infty}e^{-u}(\frac{u}{a})^n\frac{du}{a}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:7">\[\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = \frac{c}{a^{n+1}}\int_{0}^{\infty}e^{-u}u^ndu
+\tag{7}
+\end{equation}\]</span></p>
+<p>In equation 7, <span class="math inline">\(\int_{0}^{\infty}e^{-u}u^ndu\)</span> is just the gamma function and is thus equal to <span class="math inline">\(n!\)</span>.</p>
+<p>One important thing to be aware of is that the bounds of integration have not changed, since when <span class="math inline">\(x\)</span> goes to zero, from equation 4, u goes to zero as well. And when <span class="math inline">\(x\)</span> goes to infinity, <span class="math inline">\(u\)</span> goes to infinity for any non-zero constant <span class="math inline">\(a\)</span>.</p>
+<p>Finally, from equations 7 and the gamma function (equation 2):
+<span class="math display" id="eq:8">\[\begin{equation}
+c \int_{0}^{\infty}e^{-ax}x^ndx = \frac{c}{a^{n+1}}n!
+\tag{8}
+\end{equation}\]</span></p>
+<p>So to solve our problem equation 1, with <span class="math inline">\(c = 1.35 \times 10^{-7}\)</span> and <span class="math inline">\(a = 0.03\)</span>, we get:
+<span class="math display">\[\begin{equation}
+1.35 \times 10^{-7}\int_{0}^{\infty}e^{-0.03x}x^ndx = \frac{1.35 \times 10^{-7}}{0.03^5}4! = \frac{400}{3}
+\end{equation}\]</span></p>
+<p>Without using equation 8, the integral could be solved, but it would require using integration by parts multiples times (unless there is another method that I am unaware of), which is an unnecessarily long and arduous way to evaluate the integral.</p>

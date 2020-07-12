@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R | Dave Rosenman</title>
+    <link>/category/r/</link>
+      <atom:link href="/category/r/index.xml" rel="self" type="application/rss+xml" />
+    <description>R</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>R</title>
+      <link>/category/r/</link>
+    </image>
+    
+    <item>
+      <title>R and Python Functions For Detecting Prime Numbers</title>
+      <link>/post/r-and-python-functions-for-detecting-prime-numbers/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/post/r-and-python-functions-for-detecting-prime-numbers/</guid>
+      <description>
+
+
+&lt;p&gt;R function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime &amp;lt;- function(x) {
+  !any(x %% 2:(x-1) == 0L)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(7)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(999983)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Python function:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import numpy as np
+def is_prime_python(x):
+    return not any(x % np.arange(2,x-1) == 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(7)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(999983)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## True&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

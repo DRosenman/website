@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math | Dave Rosenman</title>
+    <link>/category/math/</link>
+      <atom:link href="/category/math/index.xml" rel="self" type="application/rss+xml" />
+    <description>Math</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Math</title>
+      <link>/category/math/</link>
+    </image>
+    
+    <item>
+      <title>R and Python Functions For Detecting Prime Numbers</title>
+      <link>/post/r-and-python-functions-for-detecting-prime-numbers/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/post/r-and-python-functions-for-detecting-prime-numbers/</guid>
+      <description>
+
+
+&lt;p&gt;R function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime &amp;lt;- function(x) {
+  !any(x %% 2:(x-1) == 0L)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(7)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;is_prime(999983)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Python function:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import numpy as np
+def is_prime_python(x):
+    return not any(x % np.arange(2,x-1) == 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(7)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## True&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(934213)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## False&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;is_prime_python(999983)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## True&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Derivation of Generalization of the Gamma Function</title>
+      <link>/post/derivation-of-generalization-of-the-gamma-function/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>/post/derivation-of-generalization-of-the-gamma-function/</guid>
+      <description>
+
+
+&lt;p&gt;The following definite integral problem was posted on stackexchange.com today.
+&lt;span class=&#34;math display&#34; id=&#34;eq:1&#34;&gt;\[\begin{equation} 
+  1.35 \times10^-7\int e^{-0.03x}x^4dx
+  \tag{1}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The version of the gamma function, a useful function for solving improper integrals, that I learned as an undergraduate physics major is
+&lt;span class=&#34;math display&#34; id=&#34;eq:2&#34;&gt;\[\begin{equation}
+\int_{0}^{\infty} e^{-x}x^ndx = n! 
+\tag{2}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;At first glance, it appears that the gamma function (equation 2) can be used to solve equation 1, since a constant times a definite integral is equal to the constant times the definite integral. However, since &lt;span class=&#34;math inline&#34;&gt;\(-0.03x\)&lt;/span&gt; is not equal to &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;, equation 2 cannot be used to solve equation 1; the integrands are not of the same form. But it is possible to derive a formula for solving improper integrals of the same form as equation 1 using u-subtitution and the gamma function.&lt;/p&gt;
+&lt;p&gt;Equation 1 has the form
+&lt;span class=&#34;math display&#34; id=&#34;eq:3&#34;&gt;\[\begin{equation}
+c\int_{0}^{\infty} e^{-ax}x^ndx
+\tag{3}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;(with &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt; being constants)&lt;/p&gt;
+&lt;p&gt;Let
+&lt;span class=&#34;math display&#34; id=&#34;eq:4&#34;&gt;\[\begin{equation}
+u = ax
+\tag{4}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If follows from equation 4 that
+&lt;span class=&#34;math display&#34; id=&#34;eq:5&#34;&gt;\[\begin{equation}
+x = \frac{u}{a}
+\tag{5}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;and
+&lt;span class=&#34;math display&#34; id=&#34;eq:6&#34;&gt;\[\begin{equation}
+dx = \frac{du}{a}
+\tag{6}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Applying equations 4, 5, and 6 to equation 3:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = c\int_{0}^{\infty}e^{-u}(\frac{u}{a})^n\frac{du}{a}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34; id=&#34;eq:7&#34;&gt;\[\begin{equation}
+c \int_{0}^{\infty} e^{-ax}x^ndx = \frac{c}{a^{n+1}}\int_{0}^{\infty}e^{-u}u^ndu
+\tag{7}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In equation 7, &lt;span class=&#34;math inline&#34;&gt;\(\int_{0}^{\infty}e^{-u}u^ndu\)&lt;/span&gt; is just the gamma function and is thus equal to &lt;span class=&#34;math inline&#34;&gt;\(n!\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;One important thing to be aware of is that the bounds of integration have not changed, since when &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; goes to zero, from equation 4, u goes to zero as well. And when &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; goes to infinity, &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; goes to infinity for any non-zero constant &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, from equations 7 and the gamma function (equation 2):
+&lt;span class=&#34;math display&#34; id=&#34;eq:8&#34;&gt;\[\begin{equation}
+c \int_{0}^{\infty}e^{-ax}x^ndx = \frac{c}{a^{n+1}}n!
+\tag{8}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So to solve our problem equation 1, with &lt;span class=&#34;math inline&#34;&gt;\(c = 1.35 \times 10^{-7}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(a = 0.03\)&lt;/span&gt;, we get:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+1.35 \times 10^{-7}\int_{0}^{\infty}e^{-0.03x}x^ndx = \frac{1.35 \times 10^{-7}}{0.03^5}4! = \frac{400}{3}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Without using equation 8, the integral could be solved, but it would require using integration by parts multiples times (unless there is another method that I am unaware of), which is an unnecessarily long and arduous way to evaluate the integral.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
