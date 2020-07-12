@@ -1,7 +1,8 @@
 ---
 authors:
 - admin
-bio:
+bio: 
+education:
   courses:
   - course: BS in Physics
     institution: The College of New Jersey
